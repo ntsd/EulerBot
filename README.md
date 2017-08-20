@@ -1,1 +1,1 @@
-EulerBot
+this bot fork from [MusicBot](https://github.com/Just-Some-Bots/MusicBot)
