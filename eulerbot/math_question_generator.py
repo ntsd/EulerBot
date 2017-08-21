@@ -19,11 +19,11 @@ def random_question(binary_operations, operand_range, operand_number):
 
 def question_generator(level):
     if level == "Easy":
-        return random_question(OPERATIONS, [10, 100], 2)
+        return random_question(['+', '-'], [10, 100], 2)
     elif level == "Medium":
-        return random_question(OPERATIONS, [100, 1000], 2)
+        return random_question(OPERATIONS, [10, 100], 2)
     elif level == "Hard":
-        return random_question(OPERATIONS, [100, 1000], 3)
+        return random_question(OPERATIONS, [10, 100], 3)
 
 if __name__ == '__main__':
     print(question_generator("Medium"))

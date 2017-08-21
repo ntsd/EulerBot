@@ -314,6 +314,8 @@ class EulerBot(discord.Client):
         except discord.NotFound:
             if not quiet:
                 self.safe_print("Warning: Cannot send message to %s, invalid channel?" % dest.name)
+        # except Exception as e:
+        #     print(str(e))
 
         return msg
 
@@ -945,6 +947,15 @@ class EulerBot(discord.Client):
             self.math_answer = ""
             return Response("{} Correct! The answer is {}".format(author.name, print_math_answer))
 
+    async def cmd_mathsolve(self, problem):
+        """
+        Usage:
+            {command_prefix}mathsolve problem
+
+        use to solve math problem
+        """
+        answer = str(eval(problem, {'__builtins__': None}))
+        return Response(answer)
 
 if __name__ == '__main__':
     bot = EulerBot()
